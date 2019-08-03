@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
 import MovieGallery from "./MovieGallery";
-import {Container, CardColumns } from "reactstrap";
+import {Container, CardColumns, Row } from "reactstrap";
 
 class SizzleVuMain extends Component {
   constructor(props) {
@@ -27,17 +27,17 @@ class SizzleVuMain extends Component {
         <NavBar triggerSearch={this.search} />
         <Container fluid className="main">
           <h1>Harry Potter</h1>
-          <CardColumns>
+  
             <MovieGallery movies={this.state.harryPotter.filter(movie => movie.Title.includes(this.state.searchValue))} />
-          </CardColumns>
+         
           <h1>Lord of the Rings</h1>
-          <CardColumns>
+        
             <MovieGallery movies={this.state.lor.filter(movie => movie.Title.includes(this.state.searchValue))} />
-          </CardColumns>
+      
           <h1>Hobbit</h1>
-          <CardColumns>
+        
             <MovieGallery movies={this.state.hobbit.filter(movie => movie.Title.includes(this.state.searchValue))} />
-          </CardColumns>
+      
         </Container>
       </>
     );
