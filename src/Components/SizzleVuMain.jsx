@@ -1,24 +1,22 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
 import MovieGallery from "./MovieGallery";
-import {Container, CardColumns, Row } from "reactstrap";
+import { Container, CardColumns, Row } from "reactstrap";
 
 class SizzleVuMain extends Component {
+  
   constructor(props) {
+ 
     super(props);
-    this.state = { 
-        harryPotter: [], 
-        lor: [], 
-        hobbit: [], 
-        searchValue: ""
-
-    }
- }
-
- search = (value) => { 
-    this.setState({searchValue: value});
-    console.log(value)
+    this.state = {
+      collections: [{ title: "Harry Potter", movies: [] }]
+    };
   }
+ 
+  //  search = (value) => {
+  //     this.setState({searchValue: value});
+  //     console.log(value)
+  //   }
 
   state = {};
   render() {
@@ -26,30 +24,23 @@ class SizzleVuMain extends Component {
       <>
         <NavBar triggerSearch={this.search} />
         <Container fluid className="main">
-          <h1>Harry Potter</h1>
-  
-            <MovieGallery movies={this.state.harryPotter.filter(movie => movie.Title.includes(this.state.searchValue))} />
-         
-          <h1>Lord of the Rings</h1>
-        
-            <MovieGallery movies={this.state.lor.filter(movie => movie.Title.includes(this.state.searchValue))} />
-      
-          <h1>Hobbit</h1>
-        
-            <MovieGallery movies={this.state.hobbit.filter(movie => movie.Title.includes(this.state.searchValue))} />
-      
+          {this.state.collections.map((collectionsObject, index) => (
+            <div key={index}>
+              <h1>empty</h1>
+              <MovieGallery movies={collectionsObject.movies} />
+            </div>
+          ))}
+
         </Container>
+        
       </>
+      
     );
   }
-
-
-
-
   componentDidMount = async () => {
     await this.getMoviesHP();
-    await this.getMoviesLOR();
-    await this.getMoviesHobbit();
+    // await this.getMoviesLOR();
+    // await this.getMoviesHobbit();
   };
 
   getMoviesHP = async () => {
@@ -57,29 +48,14 @@ class SizzleVuMain extends Component {
       "http://www.omdbapi.com/?apikey=448f4427&s=harry%20potter&type=movie"
     );
     var moviesArray = await response.json();
-    this.setState({
-      harryPotter: moviesArray.Search
-    });
-  };
+    var collection = this.state.collections;
+    collection[0].movies.push(moviesArray);
 
-  getMoviesLOR = async () => {
-    var response = await fetch(
-      "http://www.omdbapi.com/?apikey=448f4427&s=lord%20of%20the%20rings&type=movie"
-    );
-    var moviesArray = await response.json();
     this.setState({
-      lor: moviesArray.Search
+      collections: collection
     });
-  };
 
-  getMoviesHobbit = async () => {
-    var response = await fetch(
-      "http://www.omdbapi.com/?apikey=448f4427&s=Hobbit&type=movie"
-    );
-    var moviesArray = await response.json();
-    this.setState({
-      hobbit: moviesArray.Search
-    });
+    console.log(collection[0].movies);
   };
 }
 

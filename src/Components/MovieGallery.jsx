@@ -14,7 +14,9 @@ class MovieGallery extends Component {
       slidesToScroll: 1
     
     };
+   
     return (
+      <>
       <Slider slidesPerRow="6" {...settings}>
         {this.props.movies.map(item => (
           <div key={item.imdbID}>
@@ -23,6 +25,7 @@ class MovieGallery extends Component {
           </div>
         ))}
       </Slider>
+      </>
     );
   }
 }
