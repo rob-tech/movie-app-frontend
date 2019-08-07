@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import {Button} from "reactstrap";
+import {Button,  ButtonGroup, Col} from "reactstrap";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 
 
 class MovieGallery extends Component {
@@ -18,12 +19,15 @@ class MovieGallery extends Component {
    
     return (
       <>
-      <Slider slidesPerRow="6" {...settings}>
+      <Slider className="slide" slidesPerRow="6" {...settings}>
         {this.props.movies && this.props.movies.map(item => (
-          <div key={item.imdbID}>
-            <img width="50%" height="auto" src={item.Poster} alt={item.Title} />
-              <h5>{item.Title}</h5>
-              <Button onClick={() => this.props.onMovieClicked(item.imdbID)}>Comments</Button>
+
+          <div key={item.imdbID} className="display">
+            <img className="sliderImg"  width="70%" height="auto" src={item.Poster} alt={item.Title} />
+              <h5 className = "desc">{item.Title}</h5>
+               <Link to={"/moviedetails/" + item.imdbID}>
+              <Button className="btnOne" outline color="none" size="sm" onClick={() => this.props.onMovieClicked(item.imdbID)}>View Details</Button>
+              </Link>      
            </div>
         ))}
       </Slider>

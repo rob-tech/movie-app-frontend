@@ -1,53 +1,60 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
 import MovieGallery from "./MovieGallery";
-import { Container, } from "reactstrap";
-import Comments from "./Comments"
+import { Container, Row} from "reactstrap";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+// import { withRouter } from "react-router";
+import MovieDetails from "./MovieDetails";
 
 class SizzleVuMain extends Component {
   
   constructor(props) {
- 
     super(props);
     this.state = {
       collections: [
-        
         { title: "Harry Potter", movies: [] },
         { title: "Lord of the rings", movies: [] },
         { title: "Hobbit", movies: [] }
-    
     ],
-
-       selectedMovie: null
-    
+       selectedMovie: null,
+       searchValue: "",
     };
   }
  
-  //  search = (value) => {
-  //     this.setState({searchValue: value});
-  //     console.log(value)
-  //   }
+   search = (value) => {
+      this.setState({searchValue: value});
+      console.log(value)
+    }
 
-  state = {};
+  
   render() {
+    
     return (
-      <>
+   <Router>
+        <>
         <NavBar triggerSearch={this.search} />
-        <Container fluid className="main">
-          {this.state.collections.map((collectionsObject, index) => (
+        <Route path="/" exact render={() => 
+         <Container fluid className="main">
+          
+          {this.state.collections.map((collectionsObject, index) => { 
+            var filteredItems = collectionsObject.movies.filter(movie => movie.Title.toLowerCase().includes(this.state.searchValue))
+            return (
             <div key={index}>
-              <h1>{collectionsObject.title}</h1>
-              <MovieGallery movies={collectionsObject.movies} onMovieClicked={(imdbID) => this.setState({ selectedMovie: imdbID })} />
+            {filteredItems.length > 0 &&
+              <Row className = "titleRow">{collectionsObject.title}</Row>
+            }
+              <MovieGallery movies={filteredItems} onMovieClicked={(imdbID) => this.setState({ selectedMovie: imdbID })} />
             </div>
-          ))}
-             
-        <Comments imdbID={this.state.selectedMovie}/>
+          )})
+          }     
         </Container>
-        
-      </>
-      
+        }/>
+         <Route path="/moviedetails/:imdbID" component={MovieDetails} />
+         </>
+         </Router>
     );
   }
+
   componentDidMount = async () => {
     await this.getMoviesHP();
     await this.getMoviesLOR();

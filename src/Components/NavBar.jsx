@@ -40,7 +40,7 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        <Navbar className="nav" style={{height: 42}} light expand="md">
+        <Navbar className="nav" style={{height: 60}} expand="md">
           <NavbarBrand href="#" width="100px">
             <img src={image} style={{ width: 100 }} />
           </NavbarBrand>
@@ -48,13 +48,13 @@ class NavBar extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="mx-auto" navbar>
               <NavItem>
-                <NavLink href="#">HOME</NavLink>
+                <NavLink className="navlink" href="#">HOME</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">NEW RELEASES</NavLink>
+                <NavLink className="navlink" href="#">NEW RELEASES</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">TRENDING</NavLink>
+                <NavLink className="navlink" href="#">TRENDING</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
