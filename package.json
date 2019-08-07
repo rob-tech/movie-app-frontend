@@ -9,6 +9,7 @@
     "react": "^16.8.6",
     "react-coverflow": "^0.2.20",
     "react-dom": "^16.8.6",
+    "react-native-hr": "^1.1.4",
     "react-redux": "^7.1.0",
     "react-redux-form": "^1.16.14",
     "react-router": "^5.0.1",

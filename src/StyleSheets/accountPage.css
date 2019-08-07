@@ -1,0 +1,28 @@
+.form-error-message {
+    color: #951818;
+    font-size: small;
+  }
+  
+  
+  #formCont{
+    border: 3px solid #000;
+   margin-top: 20px;
+   padding-bottom: 20px;
+   background-color: #000;
+   color: #A52A2A ;
+   
+  }
+  
+  
+  @media (min-width: 1200px){
+  #formCont {
+      max-width: 600px;
+  }
+  }
+  
+  .formTitle{
+   margin-bottom: 30px;
+   margin-top: 20px;
+   
+  }
+  

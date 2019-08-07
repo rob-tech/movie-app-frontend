@@ -10,6 +10,7 @@ import {
   NavLink,
   Input,
 } from "reactstrap";
+import { Link } from "react-router-dom";
 
 
 
@@ -48,10 +49,10 @@ class NavBar extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="mx-auto" navbar>
               <NavItem>
-                <NavLink className="navlink" href="#">HOME</NavLink>
+                <NavLink className="navlink" href="/">HOME</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="navlink" href="#">NEW RELEASES</NavLink>
+                <NavLink className="navlink" href="/accountprofile/">ACCOUNT</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink className="navlink" href="#">TRENDING</NavLink>

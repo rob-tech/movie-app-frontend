@@ -1,0 +1,18 @@
+#cardcol {
+    margin-top: 30px;
+    height: 420px;
+    line-height: 30px;
+}
+
+
+#cardImg{
+    margin-top: 30px;
+    margin-left: 60px;
+    height: 420px;
+    border-radius: 5px
+
+}
+
+.btnTwo{
+    color:  #000  !important;
+}

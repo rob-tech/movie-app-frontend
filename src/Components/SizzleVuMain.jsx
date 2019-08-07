@@ -5,6 +5,7 @@ import { Container, Row} from "reactstrap";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 // import { withRouter } from "react-router";
 import MovieDetails from "./MovieDetails";
+import AccountProfile from "./AccountProfile";
 
 class SizzleVuMain extends Component {
   
@@ -46,10 +47,12 @@ class SizzleVuMain extends Component {
               <MovieGallery movies={filteredItems} onMovieClicked={(imdbID) => this.setState({ selectedMovie: imdbID })} />
             </div>
           )})
-          }     
+          } 
+     
         </Container>
         }/>
-         <Route path="/moviedetails/:imdbID" component={MovieDetails} />
+            <Route path="/accountprofile" exact component={AccountProfile} />    
+             <Route path="/moviedetails/:imdbID" component={MovieDetails} />
          </>
          </Router>
     );

@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './StyleSheets/index.css';
+import './StyleSheets/accountPage.css';
+import './StyleSheets/MovieDetails.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SizzleVuMain from'./Components/SizzleVuMain';
 import * as serviceWorker from './serviceWorker';

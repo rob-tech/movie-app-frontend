@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardBody, CardSubtitle, CardText, CardTitle, Button} from "reactstrap";
+import { Card, CardBody, CardSubtitle, CardText, CardTitle, Button, Row} from "reactstrap";
 import { Link } from "react-router-dom";
 
 class MovieDetails extends Component {
@@ -20,30 +20,32 @@ class MovieDetails extends Component {
           
             <div className="row">
               <div className="col-md-3">
-                <img src={this.state.movie.Poster} className="img-fluid" alt={this.state.movie.Title} />
+                <img id = "cardImg" src={this.state.movie.Poster} alt={this.state.movie.Title} />
               </div>
-              <div className="col-md-9">
-                <Card>
+              <div className="col-md-5" id="cardcol">
+                <div className="Card" id="card">
                   <CardBody>
                     <CardTitle>{this.state.movie.Title}</CardTitle>
                     <CardSubtitle>Year: {this.state.movie.Year}</CardSubtitle>                       
                     <CardText>{this.state.movie.Plot}</CardText>
                      <h6>Reviews</h6>
+                     <CardText>
                      {this.state.comments &&
                          this.state.comments.map(comment => (
-                         <CardText key={comment._id}>
+                         <div key={comment._id}>
                         {comment.comment}
-                        </CardText>
+                        </div>
                       ))}
+                      </CardText>
                   {!this.state.comments && this.state.comments.length > 0 && <h4>No comments</h4>}
                       <Link to={"/"}>
-                    <Button outline color="danger" size="sm">Back</Button>
+                    <Button className="btnTwo" outline color="danger" size="sm">Back</Button>
                     </Link>
                   </CardBody>
-                </Card>
-             
+                </div>
+                </div>
               </div>
-               </div>
+           
            </>
           )};
        </>
