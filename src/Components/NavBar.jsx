@@ -10,8 +10,6 @@ import {
   NavLink,
   Input,
 } from "reactstrap";
-import { Link } from "react-router-dom";
-
 
 
 class NavBar extends Component {
@@ -43,7 +41,7 @@ class NavBar extends Component {
       <div>
         <Navbar className="nav" style={{height: 60}} expand="md">
           <NavbarBrand href="#" width="100px">
-            <img src={image} style={{ width: 100 }} />
+            <img src={image} style={{ width: 100 }} alt="sizzle-vu"/>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -60,7 +58,7 @@ class NavBar extends Component {
             </Nav>
           </Collapse>
           <Nav className="ml-auto">
-            <Input placeholder="search" onChange={this.searchInput}  />
+            <Input placeholder="search" onChange={this.searchInput} id = "searchBar" />
           </Nav>
         </Navbar>
       </div>

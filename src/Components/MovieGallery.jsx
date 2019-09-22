@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Button,  ButtonGroup, Col} from "reactstrap";
+import {Button} from "reactstrap";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -60,6 +60,7 @@ class MovieGallery extends Component {
       </Slider>
       </>
     );
+    
   }
 }
 

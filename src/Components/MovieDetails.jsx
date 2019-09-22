@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardBody, CardSubtitle, CardText, CardTitle, Button, Row} from "reactstrap";
+import { CardBody, CardSubtitle, CardText, CardTitle, Button} from "reactstrap";
 import { Link } from "react-router-dom";
 
 class MovieDetails extends Component {
@@ -17,8 +17,7 @@ class MovieDetails extends Component {
         return (  <>
         {this.state.movie && (
           <>
-          
-            <div className="row">
+              <div className="row">
               <div className="col-md-3">
                 <img id = "cardImg" src={this.state.movie.Poster} alt={this.state.movie.Title} />
               </div>
@@ -32,7 +31,7 @@ class MovieDetails extends Component {
                      <CardText>
                      {this.state.comments &&
                          this.state.comments.map(comment => (
-                         <div key={comment._id}>
+                         <div key={comment.id}>
                         {comment.comment}
                         </div>
                       ))}
@@ -66,12 +65,10 @@ componentDidMount = async () => {
     
  fetchDetails = async imdbID => {
    imdbID = this.props.match.params.imdbID;
-    var response = await fetch("http://www.omdbapi.com/?apikey=448f4427&i=" + imdbID);
+    var response = await fetch("http://localhost:3000/movies/details" + imdbID);
     var movie = await response.json();
     
-    var commentResp = await fetch("https://strive-school-testing-apis.herokuapp.com/api/comments/" + imdbID,{
-        headers: {Authorization: "Basic dXNlcjc6M1VVNWRZRnZlblJ1UlA3RQ=="}
-      });
+    var commentResp = await fetch("http://localhost:3000/movies/" + imdbID + "/reviews");
     var comments = await commentResp.json();
 
     this.setState({

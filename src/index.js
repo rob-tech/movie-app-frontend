@@ -4,11 +4,11 @@ import './StyleSheets/index.css';
 import './StyleSheets/accountPage.css';
 import './StyleSheets/MovieDetails.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SizzleVuMain from'./Components/SizzleVuMain';
+import Main from'./Components/Main';
 import * as serviceWorker from './serviceWorker';
 
 
-ReactDOM.render(<SizzleVuMain />, document.getElementById('root'));
+ReactDOM.render(<Main />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
