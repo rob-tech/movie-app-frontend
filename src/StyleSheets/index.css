@@ -96,8 +96,10 @@ code {
   margin-left: 10px
 }
 
-#searchBar{ 
+#searchBar{
+  
     height: 30px;
     width: 150px;
-    margin-right: 20px
+    /* margin-right: 20px; */
+    /* position: relative */
 }

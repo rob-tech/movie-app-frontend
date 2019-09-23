@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 // import { withRouter } from "react-router";
 import MovieDetails from "./MovieDetails";
 import AccountProfile from "./AccountProfile";
-
+import { Link } from "react-router-dom";
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -35,9 +35,10 @@ class Main extends Component {
               filteredTitle={this.state.genericTitle}
             />
             )}
+             <Route path="/moviedetails/:imdbID" exact component={MovieDetails} />
            </Container>
           <Route path="/accountprofile" exact component={AccountProfile} />
-          <Route path="/moviedetails/:imdbID" component={MovieDetails} />
+         
         </>
       </Router>
     );

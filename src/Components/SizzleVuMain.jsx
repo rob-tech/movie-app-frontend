@@ -22,7 +22,7 @@ class SizzleVuMain extends Component {
 
   render() {
     return (
-      <Router>
+
         <>
           {this.state.collections.map((collectionsObject, index) => {
             // var filteredItems = collectionsObject.movies.filter(movie => movie.Title.toLowerCase().includes(this.state.genericMovie))
@@ -36,7 +36,7 @@ class SizzleVuMain extends Component {
             );
           })}
         </>
-      </Router>
+
     );
   }
 

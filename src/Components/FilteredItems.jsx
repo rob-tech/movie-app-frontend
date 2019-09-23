@@ -64,7 +64,7 @@ class FilteredItems extends Component {
                                     <img className="img-fluid" id="sliderImg" width="70%" height="auto" src={item.Poster} alt={item.Title} />
                                     <h5 className="desc">{item.Title}</h5>
                                     <Link to={"/moviedetails/" + item.imdbID}>
-                                        <Button className="btnOne" outline color="danger" size="sm" onClick={() => this.props.onMovieClicked(item.imdbID)}>View Details</Button>
+                                        <Button className="btnOne" outline color="danger" size="sm" >View Details</Button>
                                     </Link>
                                 </div>
                             ))}
