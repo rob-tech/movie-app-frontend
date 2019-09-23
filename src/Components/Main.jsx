@@ -44,6 +44,7 @@ class Main extends Component {
   }
 
   filterMovie = async filteredMovie => {
+    if (filteredMovie != null && filteredMovie.length > 0){
     var response = await fetch("http://localhost:3000/movies/" + filteredMovie);
     var selectedMovies = await response.json();
     if (selectedMovies != null) {
@@ -58,6 +59,13 @@ class Main extends Component {
       genericTitle: genericMovieTitle,
       genericMovie: selectedMovies
     });
+  }else {
+    this.setState({
+      genericTitle: null,
+      genericMovie: null
+    })
+  }
+      
   };
 }
 
