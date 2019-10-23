@@ -3,10 +3,10 @@ import { LocalForm, Control, Errors } from "react-redux-form";
 import { Container, Row, FormGroup, Label, Spinner, Alert } from "reactstrap";
 //if no value its valid
 const requiredValidator = val => val && val.length;
-const emailValidator = val => !val || 
-  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-    val
-  );
+// const emailValidator = val => !val || 
+//   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+//     val
+//   );
 const passwordValidator = val => !val || /^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%&? "]).*$/.test(val)
 
 
@@ -126,7 +126,7 @@ class AccountProfile extends Component {
                 placeholder="Your email"
                 validators={{
                   requiredValidator,
-                  emailValidator,
+                  // emailValidator,
                 }}
               />
               <Errors

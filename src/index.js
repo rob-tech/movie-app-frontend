@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './StyleSheets/index.css';
 import './StyleSheets/accountPage.css';
 import './StyleSheets/MovieDetails.css';
+import './StyleSheets/login.css';
+import './StyleSheets/register.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Main from'./Components/Main';
 import * as serviceWorker from './serviceWorker';

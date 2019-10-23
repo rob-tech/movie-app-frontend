@@ -4,10 +4,11 @@ import FilteredItems from "./FilteredItems";
 import SizzleVuMain from "./SizzleVuMain";
 import { Container} from "reactstrap";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-// import { withRouter } from "react-router";
+import Login from "./Login"
 import MovieDetails from "./MovieDetails";
 import AccountProfile from "./AccountProfile";
-import { Link } from "react-router-dom";
+import Register from "./Register";
+
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -36,6 +37,8 @@ class Main extends Component {
             />
             )}
              <Route path="/moviedetails/:imdbID" exact component={MovieDetails} />
+             <Route path="/login" exact component={Login} />
+             <Route path="/register" exact component={Register} />
            </Container>
           <Route path="/accountprofile" exact component={AccountProfile} />
          

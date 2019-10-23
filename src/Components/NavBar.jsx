@@ -50,10 +50,10 @@ class NavBar extends Component {
                 <NavLink className="navlink" href="/">HOME</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="navlink" href="/accountprofile/">ACCOUNT</NavLink>
+                <NavLink className="navlink" href="/accountprofile">ACCOUNT</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="navlink" href="#">TRENDING</NavLink>
+                <NavLink className="navlink" href="/login">LOGIN</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
