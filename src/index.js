@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './StyleSheets/index.css';
 import './StyleSheets/accountPage.css';
 import './StyleSheets/MovieDetails.css';

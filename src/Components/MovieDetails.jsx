@@ -18,6 +18,7 @@ class MovieDetails extends Component {
     return (<>
       {this.state.movie && (
         <>
+        {/* <Container fluid> */}
           <Card id="card">
             <Row className="no-gutters">
               <Col md="4" >
@@ -47,6 +48,7 @@ class MovieDetails extends Component {
               </Col>
             </Row>
           </Card>
+          {/* </Container> */}
           {/* </div> */}
           {/* </div>
               </div> */}
@@ -68,10 +70,10 @@ class MovieDetails extends Component {
 
   fetchDetails = async imdbID => {
 
-    var response = await fetch("http://localhost:3000/movies/details/" + imdbID);
+    var response = await fetch("http://localhost:8080/movies/details/" + imdbID);
     var movie = await response.json();
 
-    var commentResp = await fetch("http://localhost:3000/movies/" + imdbID + "/reviews");
+    var commentResp = await fetch("http://localhost:8080/movies/" + imdbID + "/reviews");
     var comments = await commentResp.json();
 
     this.setState({

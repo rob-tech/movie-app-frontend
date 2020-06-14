@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -6,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+  height: 100%;
 }
 
 code {
@@ -14,92 +13,149 @@ code {
     monospace;
 }
 
-#root{
-  background-image: linear-gradient(to right bottom, #A52A2A, #E49AB0), linear-gradient(transparent, #E49AB0 80%);
-  width:100vw;
-  height:100vh;
+#root {
+  background-image: linear-gradient(to right bottom, #a52a2a, #e49ab0),
+    linear-gradient(transparent, #e49ab0 80%);
   margin-bottom: 0;
-  overflow-y:scroll; 
 }
 
-.main{
-   padding-top:30px;
-   background-color:#A52A2A;
-   overflow-y:scroll; 
-   background-image: linear-gradient(to right bottom, #A52A2A, #E49AB0), linear-gradient(transparent, #E49AB0 80%);
-   width:100vw;
-   height:100vh;
-   margin-bottom: 0;
+.main {
+  /* background-color: #a52a2a; */
+  /* background-image: radial-gradient(
+    circle,
+    #9b111e,
+    #840033,
+    #65073e,
+    #42123e,
+    #221333,
+    #221333,
+    #221333,
+    #221333,
+    #42123e,
+    #65073e,
+    #840033,
+    #9b111e
+  ); */
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-top: 6%;
 }
 
+/* .nav .navlink {
+  color: #a52a2a !important;
+} */
 
-.nav .navlink {
-  color:  #A52A2A !important;
- 
+.navbar {
+  background-color: #000 !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  padding: 0.5% 0 0.5% 3% !important;
+  font-family: "frozitoFont", sans-serif;
 }
 
-.nav {
-    background-color:	#000 !important
+.navbar-nav{
+  margin-left: auto !important;
+}
+
+.material-icons{
+  color: white
+}
+
+.searchForm{
+  background-color: black !important;
+  border: 1px solid black !important;
+  /* height: 2em !important; */
+}
+
+.nav-link{
+  color: white;
+}
+
+.navbar-brand{
+  color: white;
 }
 
 .titleRow {
-  margin-bottom: 20px;
-  padding-top: 10px;
-  padding-left: 58px;
-  font-size: 40px;
-  font-family: 'Anton', sans-serif;
-   color: #000000 !important
+  padding-top: 2%;
+  padding-left: 4.2%;
+  padding-bottom: 1%;
+  font-size: 4vh;
+  font-family: "frozitoFont", sans-serif;
+  color: black !important;
+  
 }
 
 .slide .desc {
-  font-family: 'Source Serif Pro', serif;
+  font-family: "Source Serif Pro", serif;
   font-size: 15px;
-     color:  #000000  !important;
-     padding: 1%;
-     position: relative;
-     margin-left: 15px;
-     margin-top: 12px;
-     margin-bottom:2px
-    
+  color: #000000 !important;
+  padding: 1%;
+  text-align: center;
 }
-.slide .display{
-  
-    width: 16.6667%;
-    display: inline-block;
-    vertical-align: top;
-    height: 370px;
+.slide .display {
+  display: inline-block;
+  vertical-align: top;
 }
 
-
-  .slide {
-    width: 1400px; 
-    margin:0 auto 30px;
-  
-  }
+.slide {
+  margin: 0 auto 30px;
+}
 
 #sliderImg {
-    position:relative;
-    padding:0px;
-    border: 3px solid #000;
-    display: block;
-    margin: auto;
-    width: 90%;
-    height: 260px;
-  
+  position: relative;
+  padding: 0px;
+  border: 3px solid #000;
+  display: block;
+  margin: auto;
+  width: 95%;
+  height: 260px;
+  cursor: pointer;
 }
 
 .btnOne {
-  color:  #000  !important;
-  position: absolute;
   bottom: 0;
-  margin-top:5px;
-  margin-left: 10px
 }
 
-#searchBar{
-  
-    height: 30px;
-    width: 150px;
-    /* margin-right: 20px; */
-    /* position: relative */
+/* #searchBar {
+  width: 80%;
+  height: 20%;
+  background-color: transparent;
+  border: 1px solid #a52a2a !important;
 }
+
+#searchBar::placeholder {
+  color: #a52a2a !important;
+} */
+
+/* #searchBar.form-control{
+  color: #a52a2a !important;
+} */
+
+.slick-prev {
+  left: -20px !important;
+}
+
+.slick-next {
+  right: -22px !important;
+}
+
+.slick-slider {
+  width: 95%;
+}
+
+@font-face {
+  font-family: "frozitoFont";
+  src: url("../Fonts/Frozito-eZ99g.ttf") format("truetype");
+}
+

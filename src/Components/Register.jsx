@@ -31,7 +31,7 @@ class Register extends Component {
             password: this.state.password
           }
           var response = await fetch(
-            "http://localhost:3000/users/register",
+            "http://localhost:8080/users/register",
             {
               method: "POST",
               body: JSON.stringify(user),
@@ -125,7 +125,7 @@ class Register extends Component {
       }
     
       fetchUsers = async () => {
-        var res = await fetch("http://localhost:3000/users");
+        var res = await fetch("http://localhost:8080/users");
         var allUsers = await res.json();
         this.setState({ users: allUsers });
       }

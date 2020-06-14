@@ -1,19 +1,19 @@
 #card {
-height: 400px;
-width: 750px;
-background-color: #000;
-align-content: center
+  height: 400px;
+  width: 750px;
+  background-color: #000;
+  font-family: 'frozitoFont', sans-serif;
+  margin: auto;
 }
 
-#cardbody{
-    color:  #A52A2A !important;
+#cardbody {
+  color: #a52a2a !important;
 }
 
-#cardImg{
-height: 400px
+#cardImg {
+  height: 400px;
 }
 
-
-.btnTwo{
-    color:   #A52A2A   !important;
+.btnTwo {
+  color: #a52a2a !important;
 }

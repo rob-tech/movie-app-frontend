@@ -10,9 +10,9 @@ class SizzleVuMain extends Component {
     super(props);
     this.state = {
       collections: [
-        { Title: "HARRY POTTER", movies: [] },
-        { Title: "LORD OF THE RINGS", movies: [] },
-        { Title: "HOBBIT", movies: [] }
+        { Title: "Harry Potter", movies: [] },
+        { Title: "The Lord of the Rings", movies: [] },
+        { Title: "Hobbit", movies: [] }
       ],
       selectedMovie: null
     };
@@ -47,7 +47,7 @@ class SizzleVuMain extends Component {
   };
 
   getMoviesHP = async () => {
-    var response = await fetch("http://localhost:3000/movies/harrypotter");
+    var response = await fetch("http://localhost:8080/movies/harrypotter");
     var hpmovies = await response.json();
     var allMovies = this.state.collections;
     allMovies[0].movies = hpmovies;
@@ -57,7 +57,7 @@ class SizzleVuMain extends Component {
   };
 
   getMoviesLOR = async () => {
-    var response = await fetch("http://localhost:3000/movies/lor");
+    var response = await fetch("http://localhost:8080/movies/lor");
     var movies = await response.json();
     var allMovies = this.state.collections;
     allMovies[1].movies = movies;
@@ -67,7 +67,7 @@ class SizzleVuMain extends Component {
   };
 
   getMoviesHobbit = async () => {
-    var response = await fetch("http://localhost:3000/movies/hobbit");
+    var response = await fetch("http://localhost:8080/movies/hobbit");
 
     var movies = await response.json();
     var allMovies = this.state.collections;

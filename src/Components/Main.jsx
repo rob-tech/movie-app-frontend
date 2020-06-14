@@ -25,8 +25,10 @@ class Main extends Component {
     return (
       <Router>
         <>
-          <NavBar triggerSearch={this.search} />
-          <Container fluid className="main">
+        <NavBar triggerSearch={this.search} />
+        <Container fluid className="main m-0">
+
+        
           {!this.state.genericMovie && !this.state.genericTitle && (
             <Route path="/" exact component={SizzleVuMain} />
           )}
@@ -49,7 +51,7 @@ class Main extends Component {
 
   filterMovie = async filteredMovie => {
     if (filteredMovie != null && filteredMovie.length > 0){
-    var response = await fetch("http://localhost:3000/movies/" + filteredMovie);
+    var response = await fetch("http://localhost:8080/movies/" + filteredMovie);
     var selectedMovies = await response.json();
     if (selectedMovies != null) {
       var genericMovieTitle = "";
