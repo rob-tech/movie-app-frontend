@@ -24,27 +24,37 @@ code {
   right: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  background: black;
+  background-image: linear-gradient(
+    to bottom,
+    #10151b,
+    #13181f,
+    #151b23,
+    #171e27,
+    #19212b
+  );
 }
 
 .main {
-  background: black;
+  /* background: #f8f8ff; */
   display: flex;
   flex-direction: column;
   padding-top: 6%;
+  background: transparent;
 }
 
 .navbar {
-  background: linear-gradient(#232526, #414345);
-  opacity: 90%;
+  background: #13181f;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
+  opacity: 96%;
   position: fixed !important;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 5;
   padding: 0.5% 0 0.5% 3% !important;
-  font-family: "frozitoFont", sans-serif;
+  font-family: "montserrat", sans-serif;
   overflow-x: hidden;
+  height: 7%;
 }
 
 .navbar-nav {
@@ -53,29 +63,39 @@ code {
 
 .material-icons {
   color: #dcdcdc;
+  font-size: 3vh;
 }
 
 .searchForm {
-  background-color: black !important;
-  border: 1px solid black !important;
+  /* background-color: #080507 !important; */
+  /* border: 1px solid black !important; */
+  width: 12vw !important;
+  height: 4.1vh !important;
+  font-size: 2vh !important;
+}
+
+.searchForm::placeholder {
+  font-size: 2vh !important;
 }
 
 .nav-link {
   color: #dcdcdc;
+  font-size: 2vh;
 }
 
 .navbar-brand {
   color: #dcdcdc;
+  font-family: "montserratBold", sans-serif;
+  font-size: 2vh;
 }
 
 .titleRow {
   padding-top: 2%;
-  padding-left: 4.2%;
-  padding-bottom: 1%;
-  font-size: 4vh;
-  font-family: "frozitoFont", sans-serif;
-  color: #414345 !important;
-  text-shadow: 0.7px 0.2px #dcdcdc;
+  padding-left: 1.8%;
+  padding-bottom: 0.4%;
+  font-size: 3.2vh;
+  font-family: "montserratBold", sans-serif;
+  color: #dcdcdc !important;
 }
 
 .slide .desc {
@@ -89,13 +109,11 @@ code {
   width: 100%;
   height: 260px;
 }
-.display:hover {
-  position: relative;
-  z-index: 1;
-}
 
 .display:hover img,
 .display:focus img {
+  position: relative;
+  z-index: 1;
   transform: scale(1.1);
 }
 
@@ -105,14 +123,14 @@ code {
 
 #sliderImg {
   position: relative;
-  padding: 5px;
-  border: 3px solid #000;
+  padding: 3px;
   display: block;
   margin: auto;
   width: 100%;
   height: 100%;
   cursor: pointer;
   transition: all 0.5s;
+  filter: brightness(130%);
 }
 
 .btnOne {
@@ -128,10 +146,15 @@ code {
 }
 
 .slick-slider {
-  width: 95%;
+  width: 97%;
 }
 
 @font-face {
-  font-family: "frozitoFont";
-  src: url("../Fonts/Frozito-eZ99g.ttf") format("truetype");
+  font-family: "montserrat";
+  src: url("../Fonts/Montserrat-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "montserratBold";
+  src: url("../Fonts/Montserrat-SemiBold.ttf") format("truetype");
 }

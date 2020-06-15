@@ -28,7 +28,7 @@ class SizzleVuMain extends Component {
             // var filteredItems = collectionsObject.movies.filter(movie => movie.Title.toLowerCase().includes(this.state.genericMovie))
             return (
               <div key={index}>
-                  <Row className="titleRow">{collectionsObject.Title}</Row>
+                  <Row className="titleRow m-0">{collectionsObject.Title}</Row>
                    <MovieGallery movies={collectionsObject.movies} onMovieClicked={imdbID => this.setState({ selectedMovie: imdbID })
                     }
                   />              

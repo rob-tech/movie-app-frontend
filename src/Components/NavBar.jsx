@@ -65,7 +65,7 @@ class NavBar extends Component {
       <nav className="navbar navbar-expand-lg ">
     <div className="container-fluid">
         <div className="navbar-translate">
-            <a className="navbar-brand" href="/presentation.html">Fantasia-Vu</a>
+            <a className="navbar-brand" href="/presentation.html">Movies</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
             <span className="sr-only">Toggle navigation</span>
             <span className="navbar-toggler-icon"></span>
