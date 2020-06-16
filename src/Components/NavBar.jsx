@@ -1,16 +1,4 @@
 import React, { Component } from "react";
-import image from "../Assets/Capture.PNG";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  Input,
-} from "reactstrap";
-
 
 class NavBar extends Component {
   state = {};
@@ -19,16 +7,16 @@ class NavBar extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
     };
   }
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
     });
   }
 
-  searchInput = input => {
+  searchInput = (input) => {
     if (input.currentTarget.value.length >= 3) {
       this.props.triggerSearch(input.currentTarget.value);
     } else {
@@ -38,66 +26,59 @@ class NavBar extends Component {
 
   render() {
     return (
-      // <div>
-      //   <Navbar className="nav" expand="md">
-      //     <NavbarBrand href="#" width="100px">
-      //       <img src={image} style={{ width: 100 }} alt="sizzle-vu"/>
-      //     </NavbarBrand>
-      //     <NavbarToggler onClick={this.toggle} />
-      //     <Collapse isOpen={this.state.isOpen} navbar>
-      //       <Nav className="mx-auto" navbar>
-      //         <NavItem>
-      //           <NavLink className="navlink" href="/">HOME</NavLink>
-      //         </NavItem>
-      //         <NavItem>
-      //           <NavLink className="navlink" href="/accountprofile">ACCOUNT</NavLink>
-      //         </NavItem>
-      //         <NavItem>
-      //           <NavLink className="navlink" href="/login">LOGIN</NavLink>
-      //         </NavItem>
-      //       </Nav>
-      //     </Collapse>
-      //     <div>
-      //       <Input placeholder="Search" onChange={this.searchInput} id = "searchBar" />
-      //     </div>
-      //   </Navbar>
-      // </div>
       <nav className="navbar navbar-expand-lg ">
-    <div className="container-fluid">
-        <div className="navbar-translate">
-            <a className="navbar-brand" href="/presentation.html">Movies</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="sr-only">Toggle navigation</span>
-            <span className="navbar-toggler-icon"></span>
-            <span className="navbar-toggler-icon"></span>
-            <span className="navbar-toggler-icon"></span>
+        <div className="container-fluid px-5">
+          <div className="navbar-translate">
+            <a className="navbar-brand" href="/presentation.html">
+              Movies
+            </a>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="sr-only">Toggle navigation</span>
+              <span className="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon"></span>
             </button>
-        </div>
+          </div>
 
-        <div className="collapse navbar-collapse">
-            <ul className="navbar-nav">
-                <li className="nav-item active">
-                    <a href="/" className="nav-link" >Home</a>
-                </li>
-                <li className="nav-item">
-                    <a href="/accountprofile" className="nav-link">Account</a>
-                </li>
-                <li className="nav-item">
-                    <a href="/login" className="nav-link">Login</a>
-                </li>
-            </ul>
-
-            <form className="form-inline ml-auto">
-                <div className="form-group no-border">
-                  <input type="text" className="form-control searchForm" placeholder="Search"  onChange={this.searchInput}/>
-                </div>
-                <div  className="btn btn-white btn-just-icon btn-round">
-                    <i className="material-icons">search</i>
-                </div>
+          <div className="collapse navbar-collapse">
+            <form className="form-inline px-5">
+              <div className="form-group no-border" id="searchFormGroup">
+                <input
+                  type="text"
+                  className="form-control searchForm"
+                  placeholder="Search"
+                  onChange={this.searchInput}
+                />
+              </div>
+                <i className="material-icons">search</i>
             </form>
+            <ul className="navbar-nav ml-auto px-0">
+              <li className="nav-item my-auto mx-3">
+                <i className="fa fa-home navIcon" aria-hidden="true"></i>
+              </li>
+              <li className="nav-item my-auto">
+                <i className="fa fa-power-off navIcon" aria-hidden="true"></i>
+              </li>
+              {/* <li className="nav-item">
+                <a href="/accountprofile" className="nav-link">
+                  Account
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/login" className="nav-link">
+                  Login
+                </a>
+              </li> */}
+            </ul>
+          </div>
         </div>
-    </div>
-</nav>
+      </nav>
     );
   }
 }

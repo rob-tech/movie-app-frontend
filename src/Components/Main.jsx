@@ -26,8 +26,8 @@ class Main extends Component {
       <Router>
         <>
         <NavBar triggerSearch={this.search} />
-        <Container fluid className="main m-0">
-
+        <Container fluid className="main m-0 mt-2">
+  
         
           {!this.state.genericMovie && !this.state.genericTitle && (
             <Route path="/" exact component={SizzleVuMain} />

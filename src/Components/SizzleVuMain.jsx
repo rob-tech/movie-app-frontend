@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import MovieGallery from "./MovieGallery";
-import { Row } from "reactstrap";
+import { Row, Container } from "reactstrap";
 import { BrowserRouter as Router } from "react-router-dom";
 // import { withRouter } from "react-router";
 
@@ -28,10 +28,12 @@ class SizzleVuMain extends Component {
             // var filteredItems = collectionsObject.movies.filter(movie => movie.Title.toLowerCase().includes(this.state.genericMovie))
             return (
               <div key={index}>
+                <Container fluid>
                   <Row className="titleRow m-0">{collectionsObject.Title}</Row>
                    <MovieGallery movies={collectionsObject.movies} onMovieClicked={imdbID => this.setState({ selectedMovie: imdbID })
                     }
-                  />              
+                  />   
+                  </Container>           
               </div>
             );
           })}

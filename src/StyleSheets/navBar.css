@@ -1,0 +1,87 @@
+.nav-link {
+  color: #dcdcdc;
+  font-size: 2vh;
+}
+
+.navbar-brand {
+  color: #dcdcdc;
+  font-family: "montserratBold", sans-serif;
+  font-size: 2vh;
+}
+
+.navbar {
+  background: #13181f;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
+  opacity: 96%;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  padding: 0.5% 0 0.5% 0 !important;
+  font-family: "montserrat", sans-serif;
+  overflow-x: hidden;
+  height: 7%;
+}
+
+.navbar-nav {
+  padding-right: 10%;
+}
+
+.navIcon {
+  cursor: pointer;
+  color: #dcdcdc;
+}
+
+.navIcon:hover {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.material-icons {
+  color: #dcdcdc;
+  font-size: 3vh;
+}
+
+.searchForm {
+  width: 12vw !important;
+  height: 4.1vh !important;
+  font-size: 2vh !important;
+  border: none !important;
+  background: transparent !important;
+
+}
+
+#searchFormGroup{
+    border-bottom: 0.5px solid #dcdcdc !important;
+}
+
+
+.searchForm::placeholder {
+  font-size: 2vh !important;
+}
+.form-control:focus {
+    box-shadow: none !important;
+}
+
